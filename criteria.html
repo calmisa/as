@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Критерии буклетов - MS Publisher</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #4a89dc;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        
+        /* Navigation styles */
+        nav {
+            background-color: #3a6fc7;
+            padding: 10px 0;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Main content styles */
+        main {
+            padding: 40px 0;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #4a89dc;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #555;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Image styles */
+        .image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-caption {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        /* Criteria styles */
+        .criteria-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .criteria-box {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4a89dc;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.3s;
+        }
+        
+        .criteria-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .criteria-box h4 {
+            color: #4a89dc;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        /* Compare containers */
+        .compare-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .compare-box {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .compare-header {
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .good-header {
+            background-color: #4caf50;
+        }
+        
+        .bad-header {
+            background-color: #f44336;
+        }
+        
+        .compare-content {
+            padding: 15px;
+            background-color: white;
+        }
+        
+        .compare-content ul {
+            margin-left: 20px;
+        }
+        
+        .compare-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Checklist styles */
+        .checklist {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a89dc;
+            font-weight: bold;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            font-size: 0.9em;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 0;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .criteria-box, .compare-box {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Критерии эффективных буклетов</h1>
+                <p class="subtitle">Ключевые принципы создания качественных буклетов</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="construction.html">Конструкция буклетов</a></li>
+                <li><a href="classification.html">Классификация и виды</a></li>
+                <li><a href="criteria.html">Критерии буклетов</a></li>
+                <li><a href="instructions.html">Инструкция по созданию</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <section>
+                <h2>Основные критерии качественного буклета</h2>
+                <p>Эффективный буклет должен соответствовать определенным критериям, которые помогают донести информацию до целевой аудитории и достичь поставленных целей. Рассмотрим ключевые критерии, на которые следует обратить внимание при создании буклетов.</p>
+                
+                <div class="image-container">
+                    <img src="https://images.pexels.com/photos/4439901/pexels-photo-4439901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Качественный буклет" width="800">
+                    <p class="image-caption">Пример хорошо оформленного буклета с соблюдением основных критериев</p>
+                </div>
+                
+                <h3>Основные критерии качества буклета</h3>
+                <div class="criteria-container">
+                    <div class="criteria-box">
+                        <h4>1. Ясность содержания</h4>
+                        <p>Информация должна быть четкой, логичной и легкой для понимания. Используйте простой язык и избегайте жаргона, если только ваша целевая аудитория не знакома с ним.</p>
+                    </div>
+                    
+                    <div class="criteria-box">
+                        <h4>2. Привлекательный дизайн</h4>
+                        <p>Визуальная привлекательность буклета определяет, заинтересуется ли читатель его содержанием. Используйте качественные изображения, гармоничные цветовые сочетания и продуманную компоновку.</p>
+                    </div>
+                    
+                    <div class="criteria-box">
+                        <h4>3. Удобочитаемость</h4>
+                        <p>Текст должен быть легко читаемым. Выбирайте подходящий размер и тип шрифта, обеспечивайте достаточный контраст между текстом и фоном, используйте разумное расстояние между строками.</p>
+                    </div>
+                </div>
+                
+                <div class="criteria-container">
+                    <div class="criteria-box">
+                        <h4>4. Целевая направленность</h4>
+                        <p>Буклет должен быть ориентирован на конкретную аудиторию и отвечать ее потребностям. Содержание, дизайн и язык должны соответствовать интересам и характеристикам целевых читателей.</p>
+                    </div>
+                    
+                    <div class="criteria-box">
+                        <h4>5. Структурированность информации</h4>
+                        <p>Информация должна быть организована логически, с четкой иерархией и последовательностью. Используйте заголовки, подзаголовки, маркированные списки и другие элементы для структурирования.</p>
+                    </div>
+                    
+                    <div class="criteria-box">
+                        <h4>6. Качество печати и материалов</h4>
+                        <p>Высокое качество печати и подходящая бумага повышают впечатление от буклета и отражают профессионализм. Выбирайте подходящую плотность бумаги и тип отделки.</p>
+                    </div>
+                </div>
+                
+                <h3>Сравнение эффективного и неэффективного буклета</h3>
+                <div class="compare-container">
+                    <div class="compare-box">
+                        <div class="compare-header good-header">
+                            Эффективный буклет
+                        </div>
+                        <div class="compare-content">
+                            <ul>
+                                <li>Четкая, релевантная информация</li>
+                                <li>Привлекательный, профессиональный дизайн</li>
+                                <li>Хорошо структурированный контент</li>
+                                <li>Легко читаемый текст</li>
+                                <li>Качественные, релевантные изображения</li>
+                                <li>Убедительный призыв к действию</li>
+                                <li>Соответствие фирменному стилю</li>
+                                <li>Отсутствие грамматических ошибок</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="compare-box">
+                        <div class="compare-header bad-header">
+                            Неэффективный буклет
+                        </div>
+                        <div class="compare-content">
+                            <ul>
+                                <li>Перегруженность информацией</li>
+                                <li>Непрофессиональный, хаотичный дизайн</li>
+                                <li>Отсутствие структуры контента</li>
+                                <li>Мелкий, трудночитаемый текст</li>
+                                <li>Некачественные или нерелевантные изображения</li>
+                                <li>Отсутствие ясного призыва к действию</li>
+                                <li>Несоответствие фирменному стилю</li>
+                                <li>Наличие грамматических ошибок</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://images.pexels.com/photos/5699493/pexels-photo-5699493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Сравнение буклетов" width="800">
+                    <p class="image-caption">Пример сравнения эффективного (слева) и неэффективного (справа) буклета</p>
+                </div>
+                
+                <h3>Чек-лист для оценки буклета</h3>
+                <p>Используйте этот чек-лист, чтобы оценить качество вашего буклета перед публикацией:</p>
+                <ul class="checklist">
+                    <li>Информация актуальна и соответствует целевой аудитории</li>
+                    <li>Дизайн привлекательный и соответствует теме</li>
+                    <li>Заголовки привлекают внимание и информативны</li>
+                    <li>Текст легко читается (размер шрифта, контраст, интервалы)</li>
+                    <li>Информация логически структурирована</li>
+                    <li>Изображения качественные и релевантные</li>
+                    <li>Цветовая схема гармонична и соответствует бренду</li>
+                    <li>Контактная информация легко находима</li>
+                    <li>Призыв к действию ясен и заметен</li>
+                    <li>Отсутствуют орфографические и грамматические ошибки</li>
+                    <li>Буклет выглядит профессионально и качественно</li>
+                    <li>Формат и способ складывания удобны для целевого использования</li>
+                </ul>
+                
+                <h3>Технические критерии для печати</h3>
+                <p>При подготовке буклета к печати обратите внимание на следующие технические критерии:</p>
+                <div class="criteria-container">
+                    <div class="criteria-box">
+                        <h4>Разрешение изображений</h4>
+                        <p>Минимум 300 dpi для качественной печати. Изображения с низким разрешением будут выглядеть размытыми или пиксельными.</p>
+                    </div>
+                    
+                    <div class="criteria-box">
+                        <h4>Цветовая модель</h4>
+                        <p>Используйте CMYK для печатных материалов, а не RGB, которая предназначена для экранов.</p>
+                    </div>
+                    
+                    <div class="criteria-box">
+                        <h4>Выпуск за обрез (Bleed)</h4>
+                        <p>Добавьте 3-5 мм выпуска за обрез, чтобы избежать белых краев при обрезке.</p>
+                    </div>
+                    
+                    <div class="criteria-box">
+                        <h4>Формат файла</h4>
+                        <p>Сохраняйте в форматах PDF, TIFF или EPS для наилучшего качества печати.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Создание буклетов в MS Publisher | Образовательный ресурс</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция по созданию буклетов - MS Publisher</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #4a89dc;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        
+        /* Navigation styles */
+        nav {
+            background-color: #3a6fc7;
+            padding: 10px 0;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Main content styles */
+        main {
+            padding: 40px 0;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #4a89dc;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #555;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Image styles */
+        .image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-caption {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        /* Step styles */
+        .step-container {
+            margin: 30px 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-number {
+            background-color: #4a89dc;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        
+        .step-content {
+            padding: 20px;
+            flex: 1;
+        }
+        
+        .step h4 {
+            color: #4a89dc;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        /* Tips box */
+        .tips-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #4a89dc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .tips-box h4 {
+            color: #4a89dc;
+            margin-bottom: 10px;
+        }
+        
+        .tips-box ul {
+            margin-left: 20px;
+        }
+        
+        .tips-box li {
+            margin-bottom: 8px;
+        }
+        
+        /* Template gallery */
+        .template-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .template {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .template:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .template-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .template-info {
+            padding: 15px;
+        }
+        
+        .template-title {
+            font-size: 1.1em;
+            color: #4a89dc;
+            margin-bottom: 5px;
+        }
+        
+        .template-description {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            font-size: 0.9em;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 0;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                width: 100%;
+                min-height: 50px;
+            }
+            
+            .template {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Инструкция по созданию буклетов</h1>
+                <p class="subtitle">Пошаговое руководство по созданию буклетов в MS Publisher</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="construction.html">Конструкция буклетов</a></li>
+                <li><a href="classification.html">Классификация и виды</a></li>
+                <li><a href="criteria.html">Критерии буклетов</a></li>
+                <li><a href="instructions.html">Инструкция по созданию</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <section>
+                <h2>Пошаговая инструкция по созданию буклета в MS Publisher</h2>
+                <p>Microsoft Publisher предоставляет мощные инструменты для создания профессиональных буклетов. В этом руководстве мы рассмотрим процесс создания буклета с нуля.</p>
+                
+                <div class="image-container">
+                    <img src="https://images.pexels.com/photos/6893659/pexels-photo-6893659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Интерфейс MS Publisher" width="800">
+                    <p class="image-caption">Интерфейс Microsoft Publisher с открытым проектом буклета</p>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Запуск MS Publisher и выбор шаблона</h4>
+                            <p>Откройте Microsoft Publisher. На стартовом экране найдите раздел "Шаблоны" и выберите категорию "Буклеты" или "Брошюры". Если вы хотите начать с чистого листа, выберите опцию "Пустая публикация".</p>
+                            <div class="image-container">
+                                <img src="https://images.pexels.com/photos/3760524/pexels-photo-3760524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Выбор шаблона буклета" width="700">
+                                <p class="image-caption">Окно выбора шаблона буклета в MS Publisher</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Настройка формата и ориентации</h4>
+                            <p>Выберите формат бумаги (обычно A4) и ориентацию (альбомная для большинства буклетов). Для изменения этих параметров перейдите на вкладку "Макет страницы" и нажмите на "Размер" и "Ориентация".</p>
+                            <p>Затем выберите тип складывания буклета: одинарное, двойное, Z-образное и т.д. Это можно сделать через меню "Макет страницы" > "Направляющие".</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Создание фирменного стиля и цветовой схемы</h4>
+                            <p>Определите цветовую схему, которая соответствует вашему бренду или теме буклета. В Publisher можно создать собственную цветовую схему через меню "Макет страницы" > "Схемы".</p>
+                            <p>Выберите 2-3 основных цвета и 1-2 акцентных. Убедитесь, что они хорошо сочетаются и создают нужное настроение.</p>
+                            <div class="image-container">
+                                <img src="https://images.pexels.com/photos/3760531/pexels-photo-3760531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Цветовая схема буклета" width="700">
+                                <p class="image-caption">Выбор цветовой схемы для буклета</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Добавление текста</h4>
+                            <p>Используйте текстовые блоки для добавления информации. Нажмите на инструмент "Надпись" на панели инструментов и нарисуйте текстовый блок в нужном месте.</p>
+                            <p>Для эффективного буклета:</p>
+                            <ul>
+                                <li>Создайте привлекательный заголовок</li>
+                                <li>Используйте подзаголовки для структурирования информации</li>
+                                <li>Пишите короткими абзацами</li>
+                                <li>Используйте маркированные списки для лучшей читаемости</li>
+                                <li>Выбирайте читаемые шрифты (1-2 типа шрифта на весь буклет)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Добавление изображений</h4>
+                            <p>Добавьте высококачественные изображения, которые дополняют ваш текст. Нажмите "Вставка" > "Рисунки" и выберите изображение с вашего компьютера.</p>
+                            <p>После добавления изображения:</p>
+                            <ul>
+                                <li>Отрегулируйте размер и положение</li>
+                                <li>При необходимости добавьте эффекты (тени, рамки, отражения)</li>
+                                <li>Убедитесь, что изображения имеют достаточное разрешение для печати (300 dpi)</li>
+                            </ul>
+                            <div class="image-container">
+                                <img src="https://images.pexels.com/photos/3760529/pexels-photo-3760529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Добавление изображений" width="700">
+                                <p class="image-caption">Добавление и редактирование изображений в буклете</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Добавление графических элементов</h4>
+                            <p>Используйте фигуры, линии и другие графические элементы для улучшения дизайна. Перейдите на вкладку "Вставка" > "Фигуры" и выберите нужный элемент.</p>
+                            <p>Графические элементы могут служить для:</p>
+                            <ul>
+                                <li>Разделения разделов</li>
+                                <li>Выделения важной информации</li>
+                                <li>Создания визуальной иерархии</li>
+                                <li>Улучшения общего дизайна</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Добавление контактной информации</h4>
+                            <p>Не забудьте добавить контактную информацию и призыв к действию. Обычно эта информация размещается на задней панели буклета.</p>
+                            <p>Включите следующие элементы:</p>
+                            <ul>
+                                <li>Название компании/организации</li>
+                                <li>Логотип</li>
+                                <li>Адрес</li>
+                                <li>Телефон и электронная почта</li>
+                                <li>Веб-сайт</li>
+                                <li>Социальные сети</li>
+                                <li>Четкий призыв к действию (что должен сделать читатель)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h4>Проверка и корректировка</h4>
+                            <p>Внимательно проверьте буклет на наличие ошибок и недочетов:</p>
+                            <ul>
+                                <li>Проверьте орфографию и грамматику (используйте встроенную проверку правописания)</li>
+                                <li>Убедитесь, что все элементы выровнены правильно</li>
+                                <li>Проверьте читаемость текста (размер шрифта, контраст)</li>
+                                <li>Убедитесь, что изображения имеют хорошее качество</li>
+                                <li>Проверьте, что вся важная информация включена</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">9</div>
+                        <div class="step-content">
+                            <h4>Сохранение и экспорт</h4>
+                            <p>Сохраните ваш проект в формате Publisher (.pub) для возможности дальнейшего редактирования. Перейдите в "Файл" > "Сохранить как" и выберите место для сохранения.</p>
+                            <p>Для подготовки к печати экспортируйте буклет в PDF:</p>
+                            <ol>
+                                <li>Перейдите в "Файл" > "Экспорт" > "Создать PDF/XPS"</li>
+                                <li>Выберите настройки оптимизации (обычно "Оптимизировать для профессиональной печати")</li>
+                                <li>Сохраните PDF-файл</li>
+                            </ol>
+                            <div class="image-container">
+                                <img src="https://images.pexels.com/photos/6893764/pexels-photo-6893764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Экспорт буклета" width="700">
+                                <p class="image-caption">Экспорт буклета в формат PDF для печати</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tips-box">
+                    <h4>Полезные советы для создания эффективных буклетов</h4>
+                    <ul>
+                        <li><strong>Меньше значит больше</strong> - не перегружайте буклет информацией и графикой</li>
+                        <li><strong>Используйте пустое пространство</strong> - оно помогает выделить важные элементы и улучшает читаемость</li>
+                        <li><strong>Соблюдайте единство стиля</strong> - шрифты, цвета и элементы дизайна должны быть согласованы</li>
+                        <li><strong>Создавайте четкую иерархию</strong> - помогите читателю понять, что наиболее важно</li>
+                        <li><strong>Учитывайте способ складывания</strong> - продумайте, как информация будет представлена при раскрытии буклета</li>
+                        <li><strong>Проверьте буклет на распечатанной копии</strong> - это поможет увидеть проблемы, не заметные на экране</li>
+                        <li><strong>Используйте шаблоны для вдохновения</strong> - но адаптируйте их под свои потребности</li>
+                    </ul>
+                </div>
+                
+                <h3>Готовые шаблоны буклетов в MS Publisher</h3>
+                <p>Microsoft Publisher предлагает множество готовых шаблонов, которые можно использовать как основу для вашего буклета:</p>
+                
+                <div class="template-gallery">
+                    <div class="template">
+                        <img class="template-image" src="https://images.pexels.com/photos/5699455/pexels-photo-5699455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Бизнес-шаблон">
+                        <div class="template-info">
+                            <h4 class="template-title">Бизнес-буклет</h4>
+                            <p class="template-description">Профессиональный шаблон для представления компании или услуг</p>
+                        </div>
+                    </div>
+                    
+                    <div class="template">
+                        <img class="template-image" src="https://images.pexels.com/photos/5699462/pexels-photo-5699462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Образовательный шаблон">
+                        <div class="template-info">
+                            <h4 class="template-title">Образовательный буклет</h4>
+                            <p class="template-description">Шаблон для школ, университетов и образовательных программ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="template">
+                        <img class="template-image" src="https://images.pexels.com/photos/5699493/pexels-photo-5699493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Медицинский шаблон">
+                        <div class="template-info">
+                            <h4 class="template-title">Медицинский буклет</h4>
+                            <p class="template-description">Дизайн для медицинских учреждений и информации о здоровье</p>
+                        </div>
+                    </div>
+                    
+                    <div class="template">
+                        <img class="template-image" src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Туристический шаблон">
+                        <div class="template-info">
+                            <h4 class="template-title">Туристический буклет</h4>
+                            <p class="template-description">Яркий шаблон для туристических направлений и услуг</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Создание буклетов в MS Publisher | Образовательный ресурс</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
